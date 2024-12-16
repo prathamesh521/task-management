@@ -20,7 +20,7 @@ const App = () => {
 
   const fetchTasks = () => {
     axios
-      .get("http://127.0.0.1:5000/tasks")
+      .get("https://task-management-five-murex.vercel.app/tasks")
       .then((response) => setTasks(response.data))
       .catch((error) => console.error("Error fetching tasks:", error));
   };
@@ -40,7 +40,7 @@ const App = () => {
       handleUpdate(editTask);
     } else {
       axios
-        .post("http://127.0.0.1:5000/tasks", newTask)
+        .post("https://task-management-five-murex.vercel.app/tasks", newTask)
         .then((response) => {
           alert(response.data.message);
           fetchTasks();
@@ -60,7 +60,7 @@ const App = () => {
 
   const handleUpdate = (task) => {
     axios
-      .put(`http://127.0.0.1:5000/tasks/${task.id}`, task)
+      .put(`https://task-management-five-murex.vercel.app/tasks/${task.id}`, task)
       .then((response) => {
         alert(response.data.message);
         fetchTasks();
@@ -73,7 +73,7 @@ const App = () => {
   const handleDelete = (taskId) => {
     if (window.confirm("Are you sure you want to delete this task?")) {
       axios
-        .delete(`http://127.0.0.1:5000/tasks/${taskId}`)
+        .delete(`https://task-management-five-murex.vercel.app/tasks/${taskId}`)
         .then((response) => {
           alert(response.data.message);
           fetchTasks();
