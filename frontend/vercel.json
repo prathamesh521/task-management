@@ -2,7 +2,7 @@
     "rewrites": [
       {
         "source": "/api/(.*)",
-        "destination": "https://task-management-five-murex.vercel.app/"
+        "destination": "https://task-management-chi-snowy.vercel.app/"
       }
     ]
   }
